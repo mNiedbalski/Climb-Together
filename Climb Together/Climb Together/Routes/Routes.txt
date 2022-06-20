@@ -1,0 +1,13 @@
+RouteSetter1 MH1 Green
+RouteSetter1 MH2 Green
+RouteSetter1 MH3 Green
+RouteSetter1 MH4 Blue
+RouteSetter1 MH5 Red
+RouteSetter1 MH6 Yellow
+RouteSetter1 MH7 Red
+RouteSetter1 MH8 Blue
+RouteSetter2 MH9 Blue
+RouteSetter2 MH10 Blue
+RouteSetter2 MH11 Yellow
+RouteSetter3 MH12 Black
+RouteSetter1 MH13 Blue

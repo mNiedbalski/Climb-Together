@@ -1,0 +1,14 @@
+﻿  User.cpp
+  The contents of <ranges> are available only in c++latest mode with concepts support;
+  see https://github.com/microsoft/STL/issues/1814 for details.
+E:\SEM IV\PK4\Projekt\Climb Together\Climb Together\User.cpp(145,14): warning C4101: "choiceOfRoute": lokalna zmienna, do której nie istnieje odwołanie
+E:\SEM IV\PK4\Projekt\Climb Together\Climb Together\User.cpp(444,16): warning C4101: "choice": lokalna zmienna, do której nie istnieje odwołanie
+E:\SEM IV\PK4\Projekt\Climb Together\Climb Together\User.cpp(627,49): warning C4267: "argument": konwersja z "size_t" do "const int", możliwa utrata danych
+E:\SEM IV\PK4\Projekt\Climb Together\Climb Together\User.cpp(605,14): warning C4101: "choiceOfRoute": lokalna zmienna, do której nie istnieje odwołanie
+E:\SEM IV\PK4\Projekt\Climb Together\Climb Together\User.cpp(185): warning C4715: "Admin::Options”: niewszystkie ścieżki kodu zwracają wartość
+E:\SEM IV\PK4\Projekt\Climb Together\Climb Together\User.cpp(327): warning C4715: "Admin::FindMail”: niewszystkie ścieżki kodu zwracają wartość
+E:\SEM IV\PK4\Projekt\Climb Together\Climb Together\User.cpp(310): warning C4715: "Admin::CheckWithDatabase”: niewszystkie ścieżki kodu zwracają wartość
+E:\SEM IV\PK4\Projekt\Climb Together\Climb Together\User.cpp(644): warning C4715: "Basic::Options”: niewszystkie ścieżki kodu zwracają wartość
+E:\SEM IV\PK4\Projekt\Climb Together\Climb Together\User.cpp(743): warning C4715: "Basic::FindMail”: niewszystkie ścieżki kodu zwracają wartość
+E:\SEM IV\PK4\Projekt\Climb Together\Climb Together\User.cpp(726): warning C4715: "Basic::CheckWithDatabase”: niewszystkie ścieżki kodu zwracają wartość
+  Climb Together.vcxproj -> E:\SEM IV\PK4\Projekt\Climb Together\x64\Debug\Climb Together.exe
