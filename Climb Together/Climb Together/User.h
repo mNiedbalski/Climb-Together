@@ -76,6 +76,7 @@ public:
 	const double getWeight() { return this->weight; }
 	const char getSex() { return this->sex; }
 	void clear();
+	void SetupRoutesFile();
 };
 
 class Admin : public User

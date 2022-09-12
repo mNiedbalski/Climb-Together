@@ -203,7 +203,6 @@ void Admin::Print()
 	cout << "\nName: " << this->getName();
 	cout << "\nSurname: " << this->getSurname() << endl;
 	system("PAUSE");
-	system("CLS");
 }
 void Admin::PrintUserProfile()
 {
@@ -486,6 +485,7 @@ void Basic::Register()
 	this->weight = TempWeight;
 	this->sex = TempSex;
 	this->SaveToDatabase();
+	this->SetupRoutesFile();
 }
 void Basic::LoadRoutes()
 {
@@ -648,7 +648,7 @@ void Basic::SaveToDatabase()
 	fs::path myPath{ fs::current_path() };
 	this->SetPathForUser(myPath);
 	ofstream file(myPath, ios::app);
-	file << endl << this->name << " ";
+	file << this->name << " ";
 	file << this->surname << " ";
 	file << this->email << " ";
 	file << this->password << " ";
@@ -682,9 +682,12 @@ void Basic::PrintUserProfile()
 	cout << "\nSurname: " << this->surname;
 	cout << "\nLevel: " << this->level;
 	cout << "\nScore: " << this->score;
-	cout << "\nBest route: " << this->bestRoute.getID() << " " << this->bestRoute.getRouteSetter() << " " << this->bestRoute.getDifficulty() << " " << this->bestRoute.getTime() << "[ms]" << endl << endl;
+	cout << "\nBest route: ";
+	if (this->routesCompleted.size() != 0) {
+		cout << this->bestRoute.getID() << " " << this->bestRoute.getRouteSetter() << " " << this->bestRoute.getDifficulty() << " " << this->bestRoute.getTime() << "[ms]" << endl << endl;
+	}
+	else cout << "No routes completed!\n\n";
 	system("PAUSE");
-	system("CLS");
 }
 void Basic::SetPathForUser(fs::path& alteredPath)
 {
@@ -782,6 +785,12 @@ void Basic::AttendRoute(const int& index, list <Route>& _routes)
 	}
 
 }
+void Basic::SetupRoutesFile()
+{
+	fs::path myPath{ fs::current_path() };
+	myPath /= "Users/Users-Routes/" + this->email + ".txt";
+	ifstream file(myPath);
+}
 void Basic::SaveCompletedRoute(CompletedRoute& route)
 {
 	this->routesCompleted.push_back(route);
@@ -832,7 +841,8 @@ void Basic::UpdateScoreAndLevel(CompletedRoute& route)
 void Basic::FindBestRoute() //Has to find max from 5 categories Green/Blue/Yellow/Red/Black.
 {
 	CompletedRoute Best;
-	Best.setDifficulty(this->routesCompleted.begin()->getDifficulty());
+	if (this->routesCompleted.size()>0)
+		Best = *this->routesCompleted.begin();
 	for (auto& route : this->routesCompleted) {
 		if (Best.getDifficulty() == "Green" && (route.getDifficulty() == "Blue" || route.getDifficulty() == "Yellow" || route.getDifficulty() == "Red" || route.getDifficulty() == "Black"))
 			Best = route;

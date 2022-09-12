@@ -16,8 +16,7 @@ public:
     void LoadBasicUsers(list <Basic>& _users);
     void FindBestClimbers(list <Basic>& _users, vector <Basic>& _top3);
     void GetNamesOfBestClimbers(vector <string>& top3Names, vector <Basic>& top3);
-
-    
+ 
 };
 
 
